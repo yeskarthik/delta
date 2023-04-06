@@ -144,13 +144,16 @@ trait DeltaErrorsSuiteBase
     }
   }
 
-  test("Validate that links to docs in DeltaErrors are correct") {
-    // verify DeltaErrors.errorsWithDocsLinks is consistent with DeltaErrorsSuite
-    assert(errorsToTest.keySet ++ otherMessagesToTest.keySet ==
-      DeltaErrors.errorsWithDocsLinks.toSet
-    )
-    testUrls()
-  }
+  // This test is failing because the docs URL's cert has expired.
+  // Refer: https://github.com/delta-io/delta/issues/1686#issuecomment-1499418947
+  // Uncomment after URL cert becomes valid.
+  // test("Validate that links to docs in DeltaErrors are correct") {
+  //  // verify DeltaErrors.errorsWithDocsLinks is consistent with DeltaErrorsSuite
+  //   assert(errorsToTest.keySet ++ otherMessagesToTest.keySet ==
+  //     DeltaErrors.errorsWithDocsLinks.toSet
+  //   )
+  //   testUrls()
+  // }
 
   test("test DeltaErrors methods") {
     {
