@@ -144,6 +144,8 @@ trait DeltaErrorsSuiteBase
     }
   }
 
+  // This test is failing because the docs URL's cert has expired.
+  // Enable after URL cert becomes valid.
   ignore("Validate that links to docs in DeltaErrors are correct") {
     // verify DeltaErrors.errorsWithDocsLinks is consistent with DeltaErrorsSuite
     assert(errorsToTest.keySet ++ otherMessagesToTest.keySet ==
